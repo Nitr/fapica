@@ -11,8 +11,9 @@ development:
   database: fapica_development
   pool: 5
   username: root
-  password:
+  password: '1'
   socket: /var/run/mysqld/mysqld.sock
+  host: 192.168.0.110 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
