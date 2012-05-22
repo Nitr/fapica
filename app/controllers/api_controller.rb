@@ -1,4 +1,4 @@
-class ApiController < ApplicationController\
+class ApiController < ApplicationController
 	def get_hash
 		render :json => {hash: 'test_Hash'}
 	end
