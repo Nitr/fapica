@@ -62,5 +62,5 @@ SpineRails3::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match 'api/get_hash/:hash' => 'api#get_hash', :via => :get
-  match 'api/set_hash/:hash' => 'api#set_hash', :via => :post
+  match 'api/set_hash' => 'api#set_hash', :via => :post
 end

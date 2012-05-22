@@ -1,7 +1,11 @@
 class ApiController < ApplicationController
 	def get_hash
 		terminal = Terminal.find_by_hashkey(params[:hash])
-		render :json => {hash: 'test_Hash'}
+		if terminal.empty?
+			render :json => {error: 'Terminal not found'}		
+		else
+			render :json => terminal.hashkey 
+		end
 	end
 
 	def set_hash
