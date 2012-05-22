@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  visit: 2012-05-22 15:47:49
+  visit_type: 1
+
+two:
+  user: 
+  visit: 2012-05-22 15:47:49
+  visit_type: 1

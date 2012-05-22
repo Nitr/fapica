@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  keycode: MyString
+  temp: false
+
+two:
+  keycode: MyString
+  temp: false
