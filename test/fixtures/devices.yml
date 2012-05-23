@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  terminal: 
+  type: 1
+  name: MyString
+
+two:
+  terminal: 
+  type: 1
+  name: MyString
