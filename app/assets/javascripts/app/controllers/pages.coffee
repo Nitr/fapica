@@ -1,0 +1,139 @@
+$ = jQuery
+
+class PagesEdit extends Spine.Controller
+  events:
+    'click .back': 'back'
+    'submit form': 'update'
+
+  constructor: ->
+    super
+    @active (params) ->
+      @change Page.find(params.id)
+
+  render: =>
+    @html $.tmpl('app/views/pages/edit', @item)
+
+  change: (item) ->
+    @item = item
+    @render()
+
+  update: (e) ->
+    e.preventDefault()
+    @item.updateAttributes($(e.target).serializeForm())
+    @back()
+   
+  back: ->
+    @navigate '/pages', @item.id
+  
+class PagesItem extends Spine.Controller
+  events:
+    'click .back': 'back'
+    'click .edit': 'edit'
+    'click .destroy': 'destroyItem'
+    
+  constructor: ->
+    super
+  
+    Page.bind 'change', (item) => 
+      @render() if item.eql(@item)
+
+    @active (params) ->
+      @change Page.find(params.id)
+    
+  render: =>
+    @html $.tmpl('app/views/pages/show', @item)
+    
+  change: (item) ->
+    @item = item
+    @render()
+
+  destroyItem: ->
+    @item.destroy()
+    @back()
+
+  edit: ->
+    @navigate '/pages', @item.id, 'edit'
+    
+  back: ->
+    @navigate '/pages'
+
+class PagesList extends Spine.Controller
+  className: 'list'
+  
+  elements: 
+    '.items': 'items'
+  
+  events:
+    'click .item': 'show'
+    'click .create': 'create'
+    'click #kpp': 'kpp'
+    'click #cards': 'cards'
+    'click #settings': 'settings'
+    
+  constructor: ->
+    super
+    @html $.tmpl('app/views/pages/list')
+    Page.bind('refresh change', @render)
+    
+  render: =>
+    items = Page.all()
+    @items.html $.tmpl('app/views/pages/item', items)
+    
+  show: (e) ->
+    item = $(e.target).item()
+    @navigate '/pages', item.id
+    
+  create: (e) ->
+    item = Page.create(name: 'Пустая запись')
+    @navigate '/pages'
+    
+  kpp: (e) ->
+    @navigate '/kpp'
+    
+  cards: (e) ->
+    @navigate '/cards'
+    
+  settings: (e) ->
+    @navigate '/settings'
+    
+class Pages extends Spine.Controller
+  
+  constructor: ->    
+    super
+    @list = new PagesList
+    @edit = new PagesEdit
+    @item = new PagesItem
+    @kpp = new Kpp
+    @login = new Login
+    @header = new Header
+    
+    new Spine.Manager(@list, @edit, @item, @kpp, @header, @login)
+    
+    @append(@list, @edit, @item, @kpp, @header, @login)
+    
+    @routes
+      '/pages/:id/edit': (params) ->
+        @edit.active(params)
+      '/pages/:id': (params) ->
+        @item.active(params)
+      '/pages': (params) -> 
+        @list.active(params)
+      '/login': (params) -> 
+        @login.active(params)
+      '/kpp': (params) -> 
+        @kpp.active(params)
+        @header.activate(params)
+
+    @navigate '/pages'
+    
+    if user.register == 1
+      console.log user.register
+      @navigate '/login'
+      
+    # Only setup routes once pages have loaded
+    Page.bind 'refresh', -> 
+      Spine.Route.setup()
+
+    Page.fetch()
+  
+window.Pages = Pages

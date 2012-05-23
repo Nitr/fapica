@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fucking Fapica</title>
+  <title>FOWA</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,11 +9,13 @@
   
   <script type="text/javascript" charset="utf-8">
     jQuery(function(){
-      new Start({el: $("body")});
+      new Pages({el: $("#pages")});
+      new Header({el: $(".header")});
     });
   </script>
 </head>
 <body>
-
+  <div class="header"></div>
+  <div id="pages"></div>
 </body>
 </html>

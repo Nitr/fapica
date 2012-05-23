@@ -1,0 +1,9 @@
+#login-form {width: 265px; height: 121px; background-color: #41423d; border-radius: 4px; margin: 0 auto; margin-top: 30px; padding: 20px 10px;}
+#login-form .inp {height: 28px; border-radius: 3px; border: 1px solid #474747; border-bottom: 1px solid #7f7f7d; background: url("/images/inp-bg.jpg"); color: #737373; padding-left: 10px; margin-bottom: 16px;}
+#login-form .login {width: 228px; margin-left: 10px;}
+#login-form .password {width: 140px; margin-left: 10px; height: 30px;}
+#login-form .pass {float: left;}
+#login-form .submit {float: right; width: 72px; height: 30px; padding-top: 5px; color: #fff; text-align: center; border: none; border-bottom: 1px solid #233d10; border-radius: 4px; background-color: #62983a; font-weight: bold; margin: 1px 12px 0 0;}
+#login-form .submit:hover {background-color: #7bcd40; cursor: pointer;}
+#login-form .remarka {display: block; font-size: 12px; text-decoration: none; margin: 3px 0 0 12px; color: #fff;}
+#login-form .remarka:hover {text-decoration: underline;}

@@ -1,0 +1,12 @@
+.header {height: 49px; background: url('/images/top-bg.jpg'); float: left; width: 100%; margin-bottom: 30px; display: block;}
+.header	.logo {left: 50%; margin-left: -30px; position: absolute; margin-top: 15px;}		
+.header	span.back {position: absolute; text-decoration: underline; color: red;}
+.header	div {position: relative; display: none; height: 50px;} 
+.header	div	p#greetings {float: right; margin: 15px 220px 0 0; text-decoration: underline;}
+.header	div	p#greetings:hover {text-decoration: none; cursor: pointer;}
+.header	div p.main-button {position: absolute; right: 20px; right: 120px;}
+.header	div p.main-button:hover {cursor: pointer;}
+.header	div p.settings {position: absolute; right: 160px; bottom: -9px;}
+.header	div p.settings:hover {cursor: pointer;}
+.header	div p.back {position: absolute; color: #b2b3ae;margin-top: 12px; text-decoration: none; margin-left: 100px;}
+.header	div p.back:hover {text-decoration: underline; cursor: pointer;}
