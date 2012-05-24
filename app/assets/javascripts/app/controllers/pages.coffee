@@ -137,7 +137,7 @@ class Pages extends Spine.Controller
       Spine.Route.setup()
 
     Page.fetch()
-    
+    User.fetch()
   direct: -> 
     if jQuery.cookie("name") == ''
       @navigate '/login'

@@ -4,8 +4,10 @@ class Kpp extends Spine.Controller
     
   constructor: ->
     super
-    User.fetch()
-    @render()
+    #User.fetch()
+    User.bind('refresh change', @render)
+    #User.fetch()
+    #@render()
     
    # User.bind 'refresh', -> 
    #   Spine.Route.setup()
@@ -16,4 +18,6 @@ class Kpp extends Spine.Controller
     @log items
     @html $.tmpl('app/views/kpp')
     
+ # render_log: =>
+ #    JQuery('.sdfsdfs').html($.tmpl('app/views/kpp'))
 window.Kpp = Kpp

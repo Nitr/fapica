@@ -1,5 +1,5 @@
 class JuggernautObserver < ActiveRecord::Observer
-  observe :page
+  observe :page, :user
     
   def after_create(rec)
     publish(:create, rec)
