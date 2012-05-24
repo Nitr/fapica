@@ -7,6 +7,6 @@ class Kpp extends Spine.Controller
     @render()
     
   render: =>
-    @html $.tmpl('app/views/kpp', user)
+    @html $.tmpl('app/views/kpp')
     
 window.Kpp = Kpp

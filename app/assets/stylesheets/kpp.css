@@ -1,0 +1,11 @@
+.title {height: 71px; width: 100%; background: url("/images/head-bg.jpg"); border: 1px solid #cccccc; border-top: none;}
+.title span {display: block; color: #666666; font-size: 26px; margin: 37px 0 0 81px; float: left;}
+.title .other {width: 132px; height: 28px; background-color: #fff; float: right; display: block; color: #4c4c4c; margin: 26px 84px 0 0; text-align: center; padding-top: 17px;}
+.title .other:hover {text-decoration: none;}
+
+.kpp-body {width: 818px; margin: 0 auto;}
+.kpp-body .photo {border: 1px solid red; float: left;}
+.kpp-body .photo img {border: 5px solid #fff; float: left; display: block; margin-bottom: 13px;}	
+.kpp-body .photo #prev {display: block; float: left; width: 51px; height: 30px; background: url('/images/arrow-in-out.png');}
+.kpp-body .photo #next {display: block; float: right; width: 51px; height: 30px; background: url('/images/arrow-in-out.png') 52px 0px;}
+.kpp-body .photo span {float: left; font-size: 14px; margin: 7px 0 0 32px;}

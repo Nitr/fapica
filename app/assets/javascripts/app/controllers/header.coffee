@@ -8,15 +8,17 @@ class Header extends Spine.Controller
   constructor: ->
     super
     @render()
-
+    @activate()
+    
   render: ->
     @html $.tmpl('app/views/header')
 
 
   activate:()->
-    $('#greetings').text("Hello User!")
-    $('.header div').css({display: 'block'})
-    $('.header p.back').css({display: 'block'})
+    if jQuery.cookie('name') != ""
+      $('#greetings').text("Hello "+jQuery.cookie('name')+"!")
+      $('.header div').css({display: 'block'})
+      $('.header p.back').css({display: 'block'})
 
   deactivate:->
     $('#greetings').text('')
@@ -24,13 +26,16 @@ class Header extends Spine.Controller
     $('.header p.back').css({display: 'none'})
     
   triggerLogout: (e) ->
-    @navigate '/logout'
+    $.get('/logout.json', (e) ->
+    )
+    jQuery.cookie("name", "")
+    @navigate '/login'
     
   triggerSettings: (e) ->
     @navigate '/settings'
     console.log 0
     
   triggerBack: (e) ->
-    @navigate '/'
+    @navigate '/pages'
 
 window.Header = Header 

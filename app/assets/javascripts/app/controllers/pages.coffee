@@ -100,40 +100,46 @@ class Pages extends Spine.Controller
   
   constructor: ->    
     super
+    @header = new Header
     @list = new PagesList
     @edit = new PagesEdit
     @item = new PagesItem
     @kpp = new Kpp
     @login = new Login
-    @header = new Header
     
-    new Spine.Manager(@list, @edit, @item, @kpp, @header, @login)
+    new Spine.Manager(@header, @list, @edit, @item, @kpp, @login)
     
-    @append(@list, @edit, @item, @kpp, @header, @login)
+    @append(@header, @list, @edit, @item, @kpp, @login)
     
     @routes
       '/pages/:id/edit': (params) ->
         @edit.active(params)
+        @direct()
       '/pages/:id': (params) ->
         @item.active(params)
+        @direct()
       '/pages': (params) -> 
         @list.active(params)
+        @header.activate(params)
+        @direct()
       '/login': (params) -> 
         @login.active(params)
+        @direct()
       '/kpp': (params) -> 
         @kpp.active(params)
         @header.activate(params)
+        @direct()
 
     @navigate '/pages'
     
-    if user.register == 1
-      console.log user.register
-      @navigate '/login'
-      
     # Only setup routes once pages have loaded
     Page.bind 'refresh', -> 
       Spine.Route.setup()
 
     Page.fetch()
+    
+  direct: -> 
+    if jQuery.cookie("name") == ''
+      @navigate '/login'
   
 window.Pages = Pages

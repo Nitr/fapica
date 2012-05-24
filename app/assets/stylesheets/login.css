@@ -3,7 +3,7 @@
 #login-form .login {width: 228px; margin-left: 10px;}
 #login-form .password {width: 140px; margin-left: 10px; height: 30px;}
 #login-form .pass {float: left;}
-#login-form .submit {float: right; width: 72px; height: 30px; padding-top: 5px; color: #fff; text-align: center; border: none; border-bottom: 1px solid #233d10; border-radius: 4px; background-color: #62983a; font-weight: bold; margin: 1px 12px 0 0;}
+#login-form .submit {float: right; width: 72px; height: 29px; padding-top: 5px; color: #fff; text-align: center; border: none; border-bottom: 1px solid #233d10; border-radius: 4px; background-color: #62983a; font-weight: bold; margin: 0 12px 0 0;}
 #login-form .submit:hover {background-color: #7bcd40; cursor: pointer;}
 #login-form .remarka {display: block; font-size: 12px; text-decoration: none; margin: 3px 0 0 12px; color: #fff;}
 #login-form .remarka:hover {text-decoration: underline;}
