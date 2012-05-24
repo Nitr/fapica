@@ -6,10 +6,13 @@ class ApiController < ApplicationController
 		else
 			render :json => terminal.hashkey 
 		end
-		#render :json => terminal
 	end
 
 	def set_hash
 		
+	end
+	
+	def get_user_role
+		render :json => current_user.roles
 	end
 end
