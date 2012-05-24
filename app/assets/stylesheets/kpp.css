@@ -4,8 +4,49 @@
 .title .other:hover {text-decoration: none;}
 
 .kpp-body {width: 818px; margin: 0 auto;}
-.kpp-body .photo {border: 1px solid red; float: left;}
+.kpp-body .photo {float: left; margin-top: 20px; float: left; margin-right: 42px;}
 .kpp-body .photo img {border: 5px solid #fff; float: left; display: block; margin-bottom: 13px;}	
 .kpp-body .photo #prev {display: block; float: left; width: 51px; height: 30px; background: url('/images/arrow-in-out.png');}
 .kpp-body .photo #next {display: block; float: right; width: 51px; height: 30px; background: url('/images/arrow-in-out.png') 52px 0px;}
 .kpp-body .photo span {float: left; font-size: 14px; margin: 7px 0 0 32px;}
+.kpp-body .photo .atantion {background: #7e0001; position: absolute; margin-top: 108px; height: 50px; padding-top: 20px; width: 197px; text-align: center; margin-left: 6px; display: block; color: #FFFFFF; font-size: 26px; text-transform: uppercase;}
+
+.kpp-body .about {margin-top: 35px; float: left;}
+.kpp-body .about span {display: block; font-size: 15px; color: #888;}
+.kpp-body .about .if {font-size: 25px; color: #595959;}
+.kpp-body .about .o {font-size: 18px; color: #595959; margin-bottom: 12px;}
+.kpp-body .about .place {font-size: 18px; color: #595959; margin-bottom: 12px;}
+.kpp-body .about .old {font-size: 18px; color: #595959; margin-bottom: 12px;}
+.kpp-body .about .last-enter {font-size: 18px; color: #595959;margin-bottom: 12px;}
+.kpp-body .about .last-exit {font-size: 18px; color: #595959;}
+
+.kpp-body .work {float: right; padding-top: 30px;}
+.kpp-body .work .do {display: block; background: #fff; width: 248px; height: 27px; text-decoration: none; padding-top: 10px; color: #b7b5b6; padding-left: 17px;}
+.kpp-body .work .do:hover {background: #F8F8F8;}
+.kpp-body .work .do span {background: #cacaca; float: right; height: 32px; width: 48px; text-align: center; padding-top: 5px; margin-top: -10px; color: #666666; font-size: 20px;}
+.kpp-body .work .do span:hover {background: #CDCBCC;}
+.kpp-body .work .time {background: #FFFFFF; display: block; font-size: 13px; border: 6px solid #cacaca; padding: 10px 0 10px 10px; text-decoration: none;}
+.kpp-body .work .dell {color: #7e0001; background: #cacaca; text-decoration: underline; display: block; padding: 7px 0px 20px 16px;}
+.kpp-body .work .dell:hover {text-decoration: none;}
+
+.table-info {border-bottom: 2px solid #707070; margin-top: 40px;}
+.table-info .info-head {background: url("/images/head-bg.jpg"); height: 25px; color: #666666; font-size: 18px; padding: 9px 0 0 100px;}
+.table-info .info-body {height: 191px; border-bottom: 1px solid #191919; background: #333333; overflow: hidden;}
+.table-info .info-body .journal {width: 850px; margin: 0 auto;}
+.journal .left {float: left; width: 647px;}
+.journal .left .line {color: #c7c7c7; border-bottom: 1px solid #4c4c4c; padding: 8px 0; padding-left: 5px; font-size: 12px;}
+.left .line .img {float: left; width: 33px;}
+.left .line .who {float: left; width: 186px;}
+.left .line .time {float: left; width: 152px;}
+.left .line .where {float: left;}
+.journal .scroll {float: left; width: 43px; height: 191px; font-size: 20px;}
+.journal .scroll .up {display: block; text-decoration: none; padding: 10px 15px; color: #191919;}
+.journal .scroll .up:hover {color: #000000;}
+.journal .scroll .down {display: block; text-decoration: none; padding: 0px 15px; color: #191919; margin-top: 117px;}
+.journal .scroll .down:hover {color: #000000;}
+.journal .right {float: right; width: 158px; border: 1px solid #191919; height: 191px; background: #111111;}
+.journal .right .title-journal {color: #5f5f5f; font-size: 14px; padding: 8px;}
+.journal .right .type {height: 25px; background: url("/images/journal-bg.jpg"); display: block; color: #c7c7c7; text-decoration: none; padding: 5px 0 0 9px;}
+.journal .right .type:hover {text-decoration: underline;} 
+
+

@@ -88,7 +88,7 @@ class PagesList extends Spine.Controller
     @navigate '/pages'
     
   kpp: (e) ->
-    @navigate '/kpp'
+    @navigate '/kpp', 1
     
   cards: (e) ->
     @navigate '/cards'
@@ -125,7 +125,7 @@ class Pages extends Spine.Controller
       '/login': (params) -> 
         @login.active(params)
         @direct()
-      '/kpp': (params) -> 
+      '/kpp/:id': (params) -> 
         @kpp.active(params)
         @header.activate(params)
         @direct()

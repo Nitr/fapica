@@ -8,7 +8,7 @@
 .clear {clear: both; width: 0px; height: 0px; overflow: hidden; font-size: 0px; line-height: 0px;}
 
 body {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #252519;
   font-size: 15px;
   margin: 0;
