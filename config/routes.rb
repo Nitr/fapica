@@ -66,4 +66,5 @@ SpineRails3::Application.routes.draw do
   match 'api/get_hash/:hash' => 'api#get_hash', :via => :get
   match 'api/set_hash' => 'api#set_hash', :via => :post
   match 'api/get_user_role' => 'api#get_user_role'
+  match 'api/users' => 'api#users'
 end

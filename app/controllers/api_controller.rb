@@ -15,4 +15,8 @@ class ApiController < ApplicationController
 	def get_user_role
 		render :json => current_user.roles
 	end
+	
+	def users
+		render :json => User.all
+	end
 end
