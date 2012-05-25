@@ -10,6 +10,7 @@ class Kpp extends Spine.Controller
     super
     #User.fetch()
     User.bind('refresh change', @render)
+    Logs.bind('refresh change', @render)
     #User.fetch()
     #@render()
     
@@ -19,8 +20,8 @@ class Kpp extends Spine.Controller
     
   render: =>
     items = User.all()
-    console.log items
-    @html $.tmpl('app/views/kpp', items)
+    itemsl = Logs.all()
+    @html $.tmpl('app/views/kpp', items, itemsl)
     
   selectKpp: =>
     if $('.kpps').css('display') == 'none'
