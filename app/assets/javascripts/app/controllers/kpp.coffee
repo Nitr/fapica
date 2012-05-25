@@ -1,5 +1,9 @@
 class Kpp extends Spine.Controller
-  
+  events:
+    'click .other':'selectKpp'
+    'click .do':'showDo'
+    'click .kpp-item':'tokpp'
+    
   className: 'kpp'
     
   constructor: ->
@@ -15,8 +19,25 @@ class Kpp extends Spine.Controller
     
   render: =>
     items = User.all()
-    @log items
-    @html $.tmpl('app/views/kpp')
+    console.log items
+    @html $.tmpl('app/views/kpp', items)
+    
+  selectKpp: =>
+    if $('.kpps').css('display') == 'none'
+      $('.kpps').css({'display': 'block'})
+    else
+      $('.kpps').css({'display': 'none'})
+      
+  showDo: =>
+    if $('.do-list').css('display') == 'none'
+      $('.do-list').css({'display': 'block'})
+    else
+      $('.do-list').css({'display': 'none'})
+   
+  tokpp: (e) ->
+    item = $(e.target).item()
+    console.log item
+    #@navigate '/kpp', item.id
     
  # render_log: =>
  #    JQuery('.sdfsdfs').html($.tmpl('app/views/kpp'))

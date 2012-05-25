@@ -2,6 +2,9 @@
 .title span {display: block; color: #666666; font-size: 26px; margin: 37px 0 0 81px; float: left;}
 .title .other {width: 132px; height: 28px; background-color: #fff; float: right; display: block; color: #4c4c4c; margin: 26px 84px 0 0; text-align: center; padding-top: 17px;}
 .title .other:hover {text-decoration: none;}
+.title .kpps {width: 132px; background-color: #fff; float: right; display: block; color: #4c4c4c; margin: 71px -132px 0 0; text-align: center; display: none;}
+.title .kpps a {display: block; border-bottom: 1px solid #CCC; padding: 10px 0; text-decoration: none;}
+.title .kpps a:hover {background-color: #CCC;}
 
 .kpp-body {width: 818px; margin: 0 auto;}
 .kpp-body .photo {float: left; margin-top: 20px; float: left; margin-right: 42px;}
@@ -25,6 +28,7 @@
 .kpp-body .work .do:hover {background: #F8F8F8;}
 .kpp-body .work .do span {background: #cacaca; float: right; height: 32px; width: 48px; text-align: center; padding-top: 5px; margin-top: -10px; color: #666666; font-size: 20px;}
 .kpp-body .work .do span:hover {background: #CDCBCC;}
+.kpp-body .work .do-list {display: none;}
 .kpp-body .work .time {background: #FFFFFF; display: block; font-size: 13px; border: 6px solid #cacaca; padding: 10px 0 10px 10px; text-decoration: none;}
 .kpp-body .work .dell {color: #7e0001; background: #cacaca; text-decoration: underline; display: block; padding: 7px 0px 20px 16px;}
 .kpp-body .work .dell:hover {text-decoration: none;}
