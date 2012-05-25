@@ -19,9 +19,11 @@ class ApiController < ApplicationController
 	end
 	
 	def users
-		render :json => User.all
+		render :json => User.fist()
 	end
 	
+<<<<<<< HEAD
+=======
 	def user_update
 	  user = User.find(1)
 	  user.session_id = session_id
@@ -29,4 +31,5 @@ class ApiController < ApplicationController
     user.save
     render :json => user
 	end
+>>>>>>> 8950ecedf09530a79d5d518e055f1de2d2468712
 end
