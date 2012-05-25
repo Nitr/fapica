@@ -68,7 +68,7 @@ class PagesList extends Spine.Controller
     'click .create': 'create'
     'click #kpp': 'kpp'
     'click #cards': 'cards'
-    'click #settings': 'settings'
+    'click #journal': 'settings'
     
   constructor: ->
     super
@@ -93,8 +93,8 @@ class PagesList extends Spine.Controller
   cards: (e) ->
     @navigate '/cards'
     
-  settings: (e) ->
-    @navigate '/settings'
+  journal: (e) ->
+    @navigate '/journal'
     
 class Pages extends Spine.Controller
   
@@ -137,7 +137,7 @@ class Pages extends Spine.Controller
       Spine.Route.setup()
 
     Page.fetch()
-    
+    User.fetch()
   direct: -> 
     if jQuery.cookie("name") == ''
       @navigate '/login'

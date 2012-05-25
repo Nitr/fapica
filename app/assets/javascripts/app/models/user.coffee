@@ -1,7 +1,5 @@
 class User extends Spine.Model
-  @configure "id", "name", "pass"
+  @configure "api/user", "email"
   @extend Spine.Model.Ajax
-  
-  @url: "/user/sing_in"
 
 window.User = User

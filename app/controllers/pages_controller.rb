@@ -47,8 +47,5 @@ class PagesController < ApplicationController
     head :ok
   end
   
-  protected
-    def session_id
-      request.headers["X-Session-ID"]
-    end
+
 end
