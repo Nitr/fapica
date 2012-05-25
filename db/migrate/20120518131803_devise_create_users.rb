@@ -19,13 +19,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
-	t.string :f
-	t.string :i
-	t.string :o
-	t.string :job
-	t.string :photo
-	t.integer :company_id
-	t.integer :keycode_id
+		t.string :f
+		t.string :i
+		t.string :o
+		t.string :job
+		t.string :photo
+		t.integer :company_id
+		t.integer :keycode_id
       ## Encryptable
       # t.string :password_salt
 

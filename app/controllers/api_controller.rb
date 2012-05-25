@@ -17,13 +17,15 @@ class ApiController < ApplicationController
 	def get_user_role
 		render :json => current_user.roles
 	end
-	
+		
 	def users
-		render :json => User.fist()
+		render :json => User.joins(:logs,:company)
+		.select('users.id, users.email, users.f, users.i, users.o, users.job, users.photo, 
+		companies.name, logs.visit, logs.visit_type').order('logs.visit DESC').limit(1)
+
 	end
 	
-<<<<<<< HEAD
-=======
+
 	def user_update
 	  user = User.find(1)
 	  user.session_id = session_id
@@ -31,5 +33,5 @@ class ApiController < ApplicationController
     user.save
     render :json => user
 	end
->>>>>>> 8950ecedf09530a79d5d518e055f1de2d2468712
+
 end

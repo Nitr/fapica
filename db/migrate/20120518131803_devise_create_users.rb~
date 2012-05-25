@@ -25,7 +25,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 	t.string :job
 	t.string :photo
 	t.integer :company_id
-	t.integer :keycode_int
+	t.integer :keycode_id
       ## Encryptable
       # t.string :password_salt
 

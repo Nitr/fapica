@@ -1,4 +1,6 @@
 class ApiController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => [:user_update]
+  respond_to :json
 	def get_hash
 		terminal = Terminal.find_by_hashkey(params[:hash])
 		if terminal.blank?
@@ -15,8 +17,21 @@ class ApiController < ApplicationController
 	def get_user_role
 		render :json => current_user.roles
 	end
-	
+		
 	def users
-		render :json => User.all
+		render :json => User.joins(:logs,:company)
+		.select('users.id, users.email, users.f, users.i, users.o, users.job, users.photo, 
+		companies.name, logs.visit, logs.visit_type, logs.datetime').order('logs.datetime DESC').limit(1)
+
 	end
+	
+
+	def user_update
+	  user = User.find(1)
+	  user.session_id = session_id
+    user.f = params[:f]
+    user.save
+    render :json => user
+	end
+
 end
