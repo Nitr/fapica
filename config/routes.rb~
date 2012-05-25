@@ -3,59 +3,7 @@ SpineRails3::Application.routes.draw do
   devise_for :users do
     get 'logout' => 'devise/sessions#destroy'
   end
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-  
+ 
   resources :pages
   
   root :to => 'pages#index'
@@ -66,4 +14,7 @@ SpineRails3::Application.routes.draw do
   match 'api/get_hash/:hash' => 'api#get_hash', :via => :get
   match 'api/set_hash' => 'api#set_hash', :via => :post
   match 'api/get_user_role' => 'api#get_user_role'
+  match 'api/users' => 'api#users'
+  match 'api/user' => 'api#user_update', :via => :post
+  match 'api/logs' => 'api#logs'
 end

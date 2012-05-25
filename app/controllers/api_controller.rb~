@@ -19,19 +19,15 @@ class ApiController < ApplicationController
 	end
 		
 	def users
-<<<<<<< HEAD
 		render :json => User.joins(:logs,:company)
 		.select('users.id, users.email, users.f, users.i, users.o, users.job, users.photo, 
 		companies.name, logs.visit, logs.visit_type').order('logs.visit DESC').limit(1)
-
 	end
-	
 
-=======
-		render :json => User.first
+	def logs
+		render :json => Log.find(:all, :order => 'visit DESC')	
 	end
-	
->>>>>>> 92f2a631bd18a1b27614957ad1d68fd82b043fa2
+
 	def user_update
 	  user = User.find(1)
 	  user.session_id = session_id
