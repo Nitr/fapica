@@ -17,6 +17,7 @@ class ApiController < ApplicationController
 	end
 	
 	def users
-		render :json => User.all
+		render :json => User.fist()
 	end
+	
 end
