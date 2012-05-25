@@ -1,0 +1,13 @@
+.cards-body {width: 840px; margin: 0 auto;}
+.cards-body .search {background: #FFFFFF; border: 1px solid #bcbcbc; width: 222; height: 28px; font-size: 14px; color: #9c9c9c; margin: 20px 0 15px 0;}
+.cards-body .do {display: block; background: #fff; width: 248px; height: 27px; text-decoration: none; padding-top: 10px; color: #b7b5b6; padding-left: 17px; float: right; margin-top: 18px;}
+.cards-body .do:hover {background: #F8F8F8;}
+.cards-body .do span {background: #cacaca; float: right; height: 32px; width: 48px; text-align: center; padding-top: 5px; margin-top: -10px; color: #666666; font-size: 20px;}
+.cards-body .do span:hover {background: #CDCBCC;}
+.line-cards {width: 100%; border-bottom: 1px solid #cccccc; font-size: 12px; color: #666666; padding: 8px 0;}
+.line-cards .name {float: left; margin-left: 11px; width: 359px;}
+.line-cards .work {float: left; width: 189px;}
+.line-cards .type {float: left; width: 251px;}
+.line-cards .status {float: right; margin-right: 11px;}
+.select {background-color: #FFFFFF;}
+

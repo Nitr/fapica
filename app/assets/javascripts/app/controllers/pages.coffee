@@ -81,6 +81,7 @@ class PagesList extends Spine.Controller
     
   show: (e) ->
     item = $(e.target).item()
+    console.log item
     @navigate '/pages', item.id
     
   create: (e) ->
@@ -106,10 +107,12 @@ class Pages extends Spine.Controller
     @item = new PagesItem
     @kpp = new Kpp
     @login = new Login
+    @settings = new Settings
+    @cards = new Cards
     
-    new Spine.Manager(@header, @list, @edit, @item, @kpp, @login)
+    new Spine.Manager(@header, @list, @edit, @item, @kpp, @login, @settings, @cards)
     
-    @append(@header, @list, @edit, @item, @kpp, @login)
+    @append(@header, @list, @edit, @item, @kpp, @login, @settings, @cards)
     
     @routes
       '/pages/:id/edit': (params) ->
@@ -129,6 +132,13 @@ class Pages extends Spine.Controller
         @kpp.active(params)
         @header.activate(params)
         @direct()
+      '/settings': (params) -> 
+        @settings.active(params)
+        @direct()
+      '/cards': (params) -> 
+        @cards.active(params)
+        @header.activate(params)
+        @direct()
 
     @navigate '/pages'
     
@@ -139,7 +149,7 @@ class Pages extends Spine.Controller
     Page.fetch()
     User.fetch()
   direct: -> 
-    if jQuery.cookie("name") == ''
+    if jQuery.cookie("name") == '' || jQuery.cookie("name") == null
       @navigate '/login'
   
 window.Pages = Pages

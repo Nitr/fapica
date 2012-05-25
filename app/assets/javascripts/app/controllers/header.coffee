@@ -15,7 +15,7 @@ class Header extends Spine.Controller
 
 
   activate:()->
-    if jQuery.cookie('name') != ""
+    if jQuery.cookie('name') != "" && jQuery.cookie('name') != null
       $('#greetings').text("Hello "+jQuery.cookie('name')+"!")
       $('.header div').css({display: 'block'})
       $('.header p.back').css({display: 'block'})
