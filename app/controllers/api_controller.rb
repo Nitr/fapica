@@ -25,7 +25,7 @@ class ApiController < ApplicationController
 	end
 
 	def logs
-		render :json => Log.find(:all, :order => 'visit DESC')	
+		render :json => Log.find(:all, :joins => :user, :order => 'visit DESC', :select=> 'logs.id, logs.visit, logs.visit_type, logs.user_id, users.f, users.i, users.o')
 	end
 	#######################
 	#API FOR DEVISE-SERVER#

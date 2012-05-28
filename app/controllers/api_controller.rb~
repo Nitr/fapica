@@ -19,13 +19,13 @@ class ApiController < ApplicationController
 								:o => user.o,
 								:job => user.job, 
 								:photo => user.photo, 
-								:visit_last => {:date => user.visit.to_datetime, :type => user.visit_type},
-								:visit_penult => {:date => user_last.visit.to_datetime, :type => user_last.visit_type}
+								:visit_last => {:date => user.visit.to_s, :type => user.visit_type},
+								:visit_penult => {:date => user_last.visit.to_s, :type => user_last.visit_type}
 								}
 	end
 
 	def logs
-		render :json => Log.find(:all, :order => 'visit DESC')	
+		render :json => Log.find(:all, :joins => :user, :order => 'visit DESC').select('logs.id, logs.visit, logs.visit_type, logs.user_id, users.f, users.i, users.o')
 	end
 	#######################
 	#API FOR DEVISE-SERVER#
