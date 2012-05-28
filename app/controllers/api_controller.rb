@@ -9,7 +9,19 @@ class ApiController < ApplicationController
 	end
 		
 	def users
-		render :json => User.joins(:logs, :company).select('users.id, users.email, users.f, users.i, users.o, users.job, users.photo, companies.name, logs.visit, logs.visit_type').order('logs.visit DESC').limit(1)
+		users =  User.joins(:logs, :company).select('users.id, users.email, users.f, users.i, users.o, users.job, users.photo, companies.name, logs.visit, logs.visit_type').order('logs.visit DESC').limit(2)
+		user = users.first
+		user_last = users.last
+		render :json => { :id => user.id,
+								:email => user.email,
+								:f => user.f, 
+								:i => user.i, 
+								:o => user.o,
+								:job => user.job, 
+								:photo => user.photo, 
+								:visit_last => {:date => user.visit, :type => user.visit_type},
+								:visit_penult => {:date => user_last.visit, :type => user_last.visit_type}
+								}
 	end
 
 	def logs
@@ -46,6 +58,7 @@ class ApiController < ApplicationController
 				log.visit_type = 0
 			end		
 			log.visit = Time.new
+			log.session_id = session_id
 			log.save
 			render :json => user
 		end
