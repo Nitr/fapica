@@ -19,8 +19,8 @@ class ApiController < ApplicationController
 								:o => user.o,
 								:job => user.job, 
 								:photo => user.photo, 
-								:visit_last => {:date => user.visit, :type => user.visit_type},
-								:visit_penult => {:date => user_last.visit, :type => user_last.visit_type}
+								:visit_last => {:date => user.visit.to_date, :type => user.visit_type},
+								:visit_penult => {:date => user_last.visit.to_date, :type => user_last.visit_type}
 								}
 	end
 
