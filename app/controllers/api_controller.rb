@@ -27,6 +27,30 @@ class ApiController < ApplicationController
 	def logs
 		render :json => Log.find(:all, :joins => :user, :order => 'visit DESC', :select=> 'logs.id, logs.visit, logs.visit_type, logs.user_id, users.f, users.i, users.o')
 	end
+	
+	def cards
+		if params.has_key?(:temp)
+	 		result = User.joins(:keycode).where('keycods.temp = ?', params[:temp]).select('*')
+		else
+			result = User.joins(:keycode).select('*')
+		end
+		render :json => result
+	end
+	
+	def get_company_name
+		render :json => current_user.company.name
+	end
+	def set_company_name
+		#current_user.can?
+		current_user.company.name = params[:name]
+		render :json => current_user.company
+	end
+	def get_device
+		render :json => current_user.company.terminals.devise
+	end
+	def delete_device
+		current_user.company.terminals.devise.find(params[:id]).destroy
+	end
 	#######################
 	#API FOR DEVISE-SERVER#
 	#######################
