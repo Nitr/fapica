@@ -97,6 +97,45 @@ class PagesList extends Spine.Controller
   journal: (e) ->
     @navigate '/journal'
     
+class Devices extends Spine.Controller
+  
+  events:
+    'click .other':'selectSettings'
+    'click #main':'toMain'
+
+  constructor: ->
+    super
+    @active @render
+  
+  render: =>
+    @html $.tmpl('app/views/settings-devices')
+    
+  selectSettings: ->
+    if $('.kpps').css('display') == 'none'
+      $('.kpps').css({'display': 'block'})
+    else
+      $('.kpps').css({'display': 'none'})
+
+  toMain: ->
+    @navigate '/settings'
+    $('.kpps').css({'display': 'none'})
+    
+class AddCards extends Spine.Controller
+  
+  events:
+    'click .read-card':'read'
+
+  constructor: ->
+    super
+    @active @render
+  
+  render: =>
+    @html $.tmpl('app/views/cards-add')
+    
+  read: ->
+    $('.good').html('');
+    $.tmpl('app/views/cards-next').appendTo('.good');
+    
 class Pages extends Spine.Controller
   
   constructor: ->    
@@ -109,10 +148,12 @@ class Pages extends Spine.Controller
     @login = new Login
     @settings = new Settings
     @cards = new Cards
+    @devices = new Devices
+    @addCards = new AddCards
     
-    new Spine.Manager(@header, @list, @edit, @item, @kpp, @login, @settings, @cards)
+    new Spine.Manager(@header, @list, @edit, @item, @kpp, @login, @settings, @cards, @devices, @addCards)
     
-    @append(@header, @list, @edit, @item, @kpp, @login, @settings, @cards)
+    @append(@header, @list, @edit, @item, @kpp, @login, @settings, @cards, @devices, @addCards)
     
     @routes
       '/pages/:id/edit': (params) ->
@@ -134,9 +175,18 @@ class Pages extends Spine.Controller
         @direct()
       '/settings': (params) -> 
         @settings.active(params)
+        @header.activate(params)
         @direct()
       '/cards': (params) -> 
         @cards.active(params)
+        @header.activate(params)
+        @direct()
+      '/settings/diveces': (params) -> 
+        @devices.active(params)
+        @header.activate(params)
+        @direct()
+      '/cards/add': (params) ->
+        @addCards.active(params)
         @header.activate(params)
         @direct()
 
@@ -148,6 +198,7 @@ class Pages extends Spine.Controller
 
     Page.fetch()
     User.fetch()
+    Logs.fetch()
   direct: -> 
     if jQuery.cookie("name") == '' || jQuery.cookie("name") == null
       @navigate '/login'

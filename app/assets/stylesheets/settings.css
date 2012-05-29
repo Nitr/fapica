@@ -1,0 +1,21 @@
+.company-name {font-size: 16px; color: #4C4C4C; margin: 41px 0 10px 0; display: block;}
+.company-input {width: 280px; height: 35px; border: 1px solid #b2b2b2; font-size: 16px; color: #4C4C4C;}
+
+.devices-body {width: 848px; margin: 0 auto; margin-top: 32px; border-collapse: collapse;}
+.devices-body .d-line {margin-bottom: 5px; padding: 7px 0;}
+.devices-body .d-line td {color: #4c4c4c; display: block; float: left; border-bottom: 1px dashed #4c4c4c; text-decoration: none; margin-bottom: 2px;}
+.devices-body .d-line td:hover {border: none; cursor: pointer;}
+.devices-body .d-line td {text-align: center;}
+.d-line .name {margin: 0 75px 0 3px;}
+.d-line .name-d {margin-right: 78px;}
+.d-line .key {margin-right: 70px; padding: 3px 7px;}
+.d-line td.sel {background: #FFFFFF; border: none; padding-bottom: 10px; margin-bottom: 0;}
+.d-line .status {margin-right: 190px;}
+.d-line td.red {color: #8b2727; border-bottom: 1px dashed #8b2727;}
+.d-line td.green {color: #236d22; border-bottom: 1px dashed #236d22;}
+.d-line td.start {border: none; background: #fff; width: 70px; height: 22px; padding-top: 3px; margin-right: 10px; float: right;}
+.d-line td.delete {border: none; background: #fff; width: 70px; height: 22px; padding-top: 3px; float: right; }
+td.show-key {height: 71px; background: #FFFFFF; margin-bottom: 7px; padding: 0px; width: 834px; display: block; padding: 12px 7px;}
+td.show-key textarea {height: 28px; padding-top: 8px; border: 1px solid #dcdcdc; resize: none; width: 821px; background: #FFFFFF; color: #6b6b6b; font-size: 12px;}
+td.show-key span {float: right; border-bottom: 1px dashed #4c4c4c; color: #4c4c4c; font-size: 12px; padding-bottom: 2px; margin: 0 11px; margin-top: 15px;}
+td.show-key span:hover {border: none; cursor: pointer;}

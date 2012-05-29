@@ -60,8 +60,7 @@ class ApiController < ApplicationController
 			log.visit = Time.new
 			log.session_id = session_id
 			log.save
-			render :json => user
-		end
-	end
-
+			render :json => log
+    end
+  end 
 end

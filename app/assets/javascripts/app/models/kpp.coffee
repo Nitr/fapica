@@ -3,3 +3,4 @@ class Kpp extends Spine.Model
   @extend Spine.Model.Ajax
 
 window.Kpp = Kpp
+

@@ -9,25 +9,25 @@
 </div>
 <div class="kpp-body">
 	<div class="photo">
-		<img src="/images/photo.jpg">
+		<img src="/images/${photo}.jpg">
 		<div class="atantion">Внимание</div>
 		<div class="clear"></div>
-		<a id="prev"></a>
-		<span>Входит</span>
-		<a id="next"></a>
+		<a class="prev {{if visit_penult.type == 1}} {{else}} p-active {{/if}}"></a>
+		<span>{{if visit_penult.type == 1}} Входит {{else}} Выходит {{/if}}</span>
+		<a class="next {{if visit_penult.type == 1}} n-active {{else}}  {{/if}}"></a>
 		<div class="clear"></div>
 	</div>
 	<div class="about">
 		<span class="if">${f} ${i}</span>
 		<span class="o">${o}</span>
 		<span>Место работы</span>
-		<span class="place">Механический цех</span>
+		<span class="place">${job}</span>
 		<span>Возраст</span>
 		<span class="old">27 лет</span>
 		<span>Последний вход</span>
-		<span class="last-enter">17:45 23 мая 2012</span>
+		<span class="last-enter">${visit_last.date.substring(0, visit_last.date.length - 3)}</span>
 		<span>Последний выход</span>
-		<span class="last-exit">17:45 24 мая 2012</span>	
+		<span class="last-exit">${visit_penult.date.substring(0, visit_last.date.length - 3)}</span>	
 	</div>
 	<div class="work">
 		<a class="do">Действия<span>&#9650;</span></a>
@@ -38,53 +38,12 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<div class="table-info">
+<div class="table-info">	
 	<div class="info-head">Журнал</div>
 	<div class="info-body">
 		<div class="journal">
 			<div class="left">
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line">
-					<div class="img"><img src="/images/enter.jpg" /></div>
-					<div class="who">Иванов Иван Иванович</div>
-					<div class="time">23 мая 2012 17:56</div>
-					<div class="where">Механический цех</div>
-					<div class="clear"></div>
-				</div>
+				
 			</div>
 			<div class="scroll">
 				<a class="up">&#9650;</a>

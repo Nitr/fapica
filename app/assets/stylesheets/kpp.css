@@ -8,9 +8,11 @@
 
 .kpp-body {width: 818px; margin: 0 auto;}
 .kpp-body .photo {float: left; margin-top: 20px; float: left; margin-right: 42px;}
-.kpp-body .photo img {border: 5px solid #fff; float: left; display: block; margin-bottom: 13px;}	
-.kpp-body .photo #prev {display: block; float: left; width: 51px; height: 30px; background: url('/images/arrow-in-out.png');}
-.kpp-body .photo #next {display: block; float: right; width: 51px; height: 30px; background: url('/images/arrow-in-out.png') 52px 0px;}
+.kpp-body .photo img {border: 5px solid #fff; float: left; display: block; margin-bottom: 13px; width: 198px; height: 264px;}	
+.kpp-body .photo .prev {display: block; float: left; width: 51px; height: 30px; background: url('/images/arrow-in-out.png');}
+.kpp-body .photo .next {display: block; float: right; width: 51px; height: 30px; background: url('/images/arrow-in-out-2.png') 52px 0px;}
+.kpp-body .photo .n-active {background: url('/images/arrow-in-out.png') 52px 0px;}
+.kpp-body .photo .p-active {background: url('/images/arrow-in-out-2.png');}
 .kpp-body .photo span {float: left; font-size: 14px; margin: 7px 0 0 32px;}
 .kpp-body .photo .atantion {background: #7e0001; position: absolute; margin-top: 108px; height: 50px; padding-top: 20px; width: 197px; text-align: center; margin-left: 6px; display: block; color: #FFFFFF; font-size: 26px; text-transform: uppercase;}
 
@@ -40,7 +42,7 @@
 .journal .left {float: left; width: 647px;}
 .journal .left .line {color: #c7c7c7; border-bottom: 1px solid #4c4c4c; padding: 8px 0; padding-left: 5px; font-size: 12px;}
 .left .line .img {float: left; width: 33px;}
-.left .line .who {float: left; width: 186px;}
+.left .line .who {float: left; width: 216px; overflow: hidden; height: 12px;}
 .left .line .time {float: left; width: 152px;}
 .left .line .where {float: left;}
 .journal .scroll {float: left; width: 43px; height: 191px; font-size: 20px;}

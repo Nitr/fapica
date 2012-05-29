@@ -2,30 +2,33 @@
 	<span>Пропуска</span>
 </div>
 <div class="cards-body">
-	<input type="text" class="search" value="Поиск" />
+	<input type="text" class="search" value="Поиск" onclick="$(this).attr({'value': ''})" onblur="$(this).attr({'value': 'Поиск'})" />
 	<a class="do">Действия<span>&#9650;</span></a>
-	<div class="line-cards select">
+	<div class="do-list">
+		<a class="time">Добавить</a>
+	</div>
+	<div class="line-cards select" name="item">
 		<div class="name">Иванов Иван Иванович</div>
 		<div class="work">Механический цех</div>
 		<div class="type">Основной</div>
 		<div class="status">Off</div>
 		<div class="clear"></div>
 	</div>
-	<div class="line-cards">
+	<div class="line-cards" name="item">
 		<div class="name">Иванов Иван Иванович</div>
 		<div class="work">Механический цех</div>
 		<div class="type">Основной</div>
 		<div class="status">Off</div>
 		<div class="clear"></div>
 	</div>
-	<div class="line-cards">
+	<div class="line-cards" name="item">
 		<div class="name">Иванов Иван Иванович</div>
 		<div class="work">Механический цех</div>
 		<div class="type">Основной</div>
 		<div class="status">Off</div>
 		<div class="clear"></div>
 	</div>
-	<div class="line-cards">
+	<div class="line-cards"name="item">
 		<div class="name">Иванов Иван Иванович</div>
 		<div class="work">Механический цех</div>
 		<div class="type">Основной</div>
