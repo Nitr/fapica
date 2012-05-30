@@ -22,7 +22,7 @@ class JuggernautObserver < ActiveRecord::Observer
         { 
           type:   type, 
           id:     rec.id, 
-          class:  rec.class.name, 
+          class:  'User', 
           record: {
  								:id => user.id,
 								:email => user.email,
