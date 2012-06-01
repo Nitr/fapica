@@ -35,6 +35,7 @@ class Devices extends Spine.Controller
   events:
     'click .other':'selectSettings'
     'click #main':'toMain'
+    'click .key':'get_key'
 
   constructor: ->
     super
@@ -55,6 +56,9 @@ class Devices extends Spine.Controller
   toMain: ->
     @navigate '/settings'
     $('.kpps').css({'display': 'none'})
+    
+  get_key: (e) ->
+    console.log($(e.target).parent())
     
 class AddCards extends Spine.Controller
   

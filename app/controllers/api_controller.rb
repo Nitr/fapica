@@ -49,11 +49,12 @@ class ApiController < ApplicationController
 		render :json => current_user.company
 	end
 	def get_device
-		render :json => Device.where(:terminal_id => current_user.company.terminals.map {|t| t.id})
+		render :json => Device.where(:terminal_id => current_user.company.terminals.map {|t| t.id}).joins(:device_type).select('devices.*, device_types.name as device_type_name')
 	end
 	def delete_device
 		current_user.company.terminals.devise.find(params[:id]).destroy
 	end
+	
 	#######################
 	#API FOR DEVISE-SERVER#
 	#######################

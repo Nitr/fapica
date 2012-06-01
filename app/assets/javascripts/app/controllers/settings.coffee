@@ -41,5 +41,5 @@ class Settings extends Spine.Controller
     comp.name = name2
     @log comp.name  
     comp.save()
-
+    
 window.Settings = Settings 

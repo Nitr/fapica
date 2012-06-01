@@ -1,0 +1,5 @@
+class DeleteDeviceIdFromDeviceType < ActiveRecord::Migration
+  def up
+  	remove_column :accounts, :ssl_enabled
+  end
+end
