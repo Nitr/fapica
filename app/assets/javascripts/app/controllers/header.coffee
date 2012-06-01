@@ -1,8 +1,10 @@
 class Header extends Spine.Controller
 
+  className: 'header'
+
   events:
     'click .main-button': 'triggerLogout'
-    'click .settings': 'triggerSettings'
+    'click .settings-butt': 'triggerSettings'
     'click .back': 'triggerBack'
   
   constructor: ->
@@ -33,9 +35,8 @@ class Header extends Spine.Controller
     
   triggerSettings: (e) ->
     @navigate '/settings'
-    console.log 0
     
   triggerBack: (e) ->
-    @navigate '/pages'
+    @navigate '/main'
 
 window.Header = Header 

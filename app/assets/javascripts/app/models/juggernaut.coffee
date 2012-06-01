@@ -31,6 +31,7 @@ class JuggernautHandler extends Spine.Module
     @log 'process', msg
     
     klass = window[msg.class]
+    @log msg.id
     switch msg.type
       when 'create'
         klass.create msg.record unless klass.exists(msg.record.id)

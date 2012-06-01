@@ -12,10 +12,10 @@ SpineRails3::Application.routes.draw do
   match 'api/users' => 'api#users'
   match 'api/logs' => 'api#logs'
   match 'api/cards' => 'api#cards'  
-  match 'api/get_company_name' => 'api#get_company_name'
-  match 'api/set_company_name' => 'api#set_company_name', :via => :post
+  match 'api/company_names' => 'api#get_company_name'
+  match 'api/company_names/:name' => 'api#set_company_name', :via => :put
   match 'api/get_device' => 'api#get_device'
-
+  match 'api/new_page' => 'api#new_page'
 
   match 'api/get_hash/:hash' => 'api#get_hash', :via => :get
   match 'api/set_hash' => 'api#set_hash', :via => :post

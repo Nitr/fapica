@@ -76,6 +76,7 @@ class PagesList extends Spine.Controller
     Page.bind('refresh change', @render)
     
   render: =>
+    @log 1
     items = Page.all()
     @items.html $.tmpl('app/views/pages/item', items)
     
@@ -199,6 +200,7 @@ class Pages extends Spine.Controller
     Page.fetch()
     User.fetch()
     Logs.fetch()
+    Cardes.fetch()
   direct: -> 
     if jQuery.cookie("name") == '' || jQuery.cookie("name") == null
       @navigate '/login'

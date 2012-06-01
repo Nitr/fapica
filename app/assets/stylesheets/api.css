@@ -2,3 +2,8 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.menu {width: 645px; margin: 0 auto; margin-top: 20px;}
+.menu p {border: 2px solid #f8f8f8; width: 212px; text-decoration: none; height: 110px; display: block; color: #333333; font-size: 20px; background: #d9d9d9; float: left; margin-right: -1px; padding-top: 70px; text-align: center;}
+.menu p:hover {background: #cdcbcc; cursor: pointer;}
+.list, .settings, .login, .kpp, .cards, .devices  {display: none;}
+.active {display: block;}

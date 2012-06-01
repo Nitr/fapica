@@ -11,15 +11,8 @@ class Kpp extends Spine.Controller
     
   constructor: ->
     super
-    #User.fetch()
-    User.bind('refresh change', @render)
     Logs.bind('refresh change', @render)
-    #User.fetch()
-    #@render()
-    
-   # User.bind 'refresh', -> 
-   #   Spine.Route.setup()
-
+    User.bind('refresh change', @render)
     
   render: =>
     items = User.all()

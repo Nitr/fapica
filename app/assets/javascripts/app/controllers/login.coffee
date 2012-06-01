@@ -8,7 +8,6 @@ class Login extends Spine.Controller
     
   constructor: ->
     super
-    @render()
 
   render: =>
     @html $.tmpl('app/views/login')
@@ -29,7 +28,7 @@ class Login extends Spine.Controller
       if e.email 
         jQuery.cookie("name", e.email)
         if jQuery.cookie("name") != ""
-          self.navigate '/pages'
+          self.navigate '/main'
     )
     
   remarka: (e) ->

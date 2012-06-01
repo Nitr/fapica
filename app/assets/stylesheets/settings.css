@@ -19,3 +19,6 @@ td.show-key {height: 71px; background: #FFFFFF; margin-bottom: 7px; padding: 0px
 td.show-key textarea {height: 28px; padding-top: 8px; border: 1px solid #dcdcdc; resize: none; width: 821px; background: #FFFFFF; color: #6b6b6b; font-size: 12px;}
 td.show-key span {float: right; border-bottom: 1px dashed #4c4c4c; color: #4c4c4c; font-size: 12px; padding-bottom: 2px; margin: 0 11px; margin-top: 15px;}
 td.show-key span:hover {border: none; cursor: pointer;}
+.cards-body .to-do {display: block; background: #ffdeaa; width: 287px; margin-top: -35px;}
+.cards-body .to-do p {float: left; background: #FFFFFF; margin-right: 30px; margin-left: 35px; margin-top: 3px; margin-bottom: 3px; padding: 0 3px;}
+.cards-body .to-do p:hover {cursor: pointer;}

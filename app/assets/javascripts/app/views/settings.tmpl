@@ -8,6 +8,13 @@
 	</div>
 </div>
 <div class="cards-body">
+	<!-- onclick="$(this).attr({'value': ''})" onblur="$(this).attr({'value': '${name}'})"-->
 	<span class="company-name">Название компании</span>
-	<input class="company-input" type="text" value="Web Atmosfera" onclick="$(this).attr({'value': ''})" onblur="$(this).attr({'value': 'Web Atmosfera'})" />
+	<input class="company-input" type="text" value="${name}" />
+	<input class="company-input-id" type="hidden" value="${id}" />
+	<div class="to-do">
+		<p class="save">Сохранить</p>
+		<p class="back">Отменить</p>
+		<div class="clear"></div>
+	</div>
 </div>

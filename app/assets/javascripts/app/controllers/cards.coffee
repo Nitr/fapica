@@ -12,7 +12,10 @@ class Cards extends Spine.Controller
     @active @render
     
   render: =>
+    item = Cardes.all()
+    console.log item
     @html $.tmpl('app/views/cards')
+    $.tmpl('app/views/card-item', item).appendTo('.cardes')
     
   showDo: =>
     if $('.do-list').css('display') == 'none'

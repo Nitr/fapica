@@ -9,10 +9,13 @@
   
   <script type="text/javascript" charset="utf-8">
     jQuery(function(){
-	  new Main({el: $("body")});
+      new Pages({el: $("#pages")});
+      new Header({el: $(".header")});
     });
   </script>
 </head>
 <body>
+  <div class="header"></div>
+  <div id="pages"></div>
 </body>
 </html>
