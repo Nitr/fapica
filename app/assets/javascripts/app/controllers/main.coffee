@@ -10,7 +10,7 @@ class List extends Spine.Controller
   events:
     'click #kpp': 'kpp'
     'click #cards': 'cards'
-    'click #journal': 'settings'
+    'click #journal': 'journal'
     
   constructor: ->
     super
@@ -43,7 +43,6 @@ class Devices extends Spine.Controller
   
   render: =>
     items = Device.all()
-    console.log items
     @html $.tmpl('app/views/settings-devices')
     $.tmpl('app/views/settings-devices-item', items).appendTo('.devices-body');
     
@@ -58,7 +57,15 @@ class Devices extends Spine.Controller
     $('.kpps').css({'display': 'none'})
     
   get_key: (e) ->
-    console.log($(e.target).parent())
+    id = $(e.target).parent().attr('id')
+    if ($('td[name*='+id+']').css('display') == 'none')
+      $('.show-key').css({'display':'none'})
+      $('td.key').removeClass("sel")
+      $(e.target).parent().addClass("sel")
+      $('td[name*='+id+']').css({'display':'block'})
+    else 
+      $('td.key').removeClass("sel")
+      $('td[name*='+id+']').css({'display':'none'})
     
 class AddCards extends Spine.Controller
   
@@ -88,10 +95,11 @@ class Main extends Spine.Controller
     @cards = new Cards
     @devices = new Devices
     @addCards = new AddCards
+    @journal = new Journal
     
-    new Spine.Manager(@header, @list,@kpp, @login, @settings, @cards, @devices, @addCards)
+    new Spine.Manager(@header, @list,@kpp, @login, @settings, @cards, @devices, @addCards, @journal)
     
-    @append(@header, @list, @kpp, @login, @settings, @cards, @devices, @addCards)
+    @append(@header, @list, @kpp, @login, @settings, @cards, @devices, @addCards, @journal)
     
     @routes
       '/main': (params) -> 
@@ -125,11 +133,16 @@ class Main extends Spine.Controller
         @addCards.active(params)
         @header.activate(params)
         @direct()
+      '/journal': (params) ->
+        @journal.active(params)
+        @header.activate(params)
+        Logs.fetch()
+        @direct()
 
     @navigate '/main'
     
     Spine.Route.setup()
-    
+    Logs.fetch()
     Cardes.fetch()
     Device.fetch()
     

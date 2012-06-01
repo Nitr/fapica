@@ -15,7 +15,6 @@ class Settings extends Spine.Controller
     
   render: ->
     item = Company.all()
-    @log item
     @html $.tmpl('app/views/settings', item)
     
   selectSettings: ->
@@ -39,7 +38,6 @@ class Settings extends Spine.Controller
     id = $('.company-input-id').val()
     comp = Company.find(id)
     comp.name = name2
-    @log comp.name  
     comp.save()
     
 window.Settings = Settings 
