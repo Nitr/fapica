@@ -14,7 +14,12 @@ SpineRails3::Application.routes.draw do
   match 'api/cards' => 'api#cards'  
   match 'api/company_names' => 'api#get_company_name'
   match 'api/company_names/:name' => 'api#set_company_name', :via => :put
-  match 'api/device' => 'api#get_device'
+  
+  match 'api/device' => 'api#get_device', 	:via => :get
+  match 'api/device' => 'api#delete_device', :via => :delete
+  match 'api/device' => 'api#update_device', 	:via => :put
+  match 'api/device' => 'api#update_device', 	:via => :put
+  
   match 'api/new_page' => 'api#new_page'
 
   match 'api/get_hash/:hash' => 'api#get_hash', :via => :get
