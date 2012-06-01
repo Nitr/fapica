@@ -41,7 +41,8 @@ class Devices extends Spine.Controller
     @active @render
   
   render: =>
-    items = Devices.all()
+    items = Device.all()
+    console.log items
     @html $.tmpl('app/views/settings-devices')
     $.tmpl('app/views/settings-devices-item', items).appendTo('.devices-body');
     
@@ -112,10 +113,9 @@ class Main extends Spine.Controller
         @cards.active(params)
         @header.activate(params)
         @direct()
-      '/settings/diveces': (params) -> 
+      '/settings/devices': (params) -> 
         @devices.active(params)
         @header.activate(params)
-        Devices.fetch()
         @direct()
       '/cards/add': (params) ->
         @addCards.active(params)
@@ -127,6 +127,7 @@ class Main extends Spine.Controller
     Spine.Route.setup()
     
     Cardes.fetch()
+    Device.fetch()
     
   direct: -> 
     if jQuery.cookie("name") == '' || jQuery.cookie("name") == null

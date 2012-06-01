@@ -1,5 +1,5 @@
-class Devices extends Spine.Model
-  @configure "api/get_device"
+class Device extends Spine.Model
+  @configure "api/device" , "name"
   @extend Spine.Model.Ajax
 
-window.Devices = Devices
+window.Device = Device

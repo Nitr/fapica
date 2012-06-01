@@ -25,7 +25,7 @@ class Settings extends Spine.Controller
       $('.kpps').css({'display': 'none'})
 
   toDevices: ->
-    @navigate '/settings/diveces'
+    @navigate '/settings/devices'
     $('.kpps').css({'display': 'none'})
     
   show: (e) ->
